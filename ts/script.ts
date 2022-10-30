@@ -23,7 +23,7 @@ abstract class Smartphone implements Ismartphone {
         if (this.credit >= randomCall * 0.2) {
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= randomCall * 0.2;
+            this.credit -= Math.round(randomCall * 0.2);
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo`);
         }
@@ -51,7 +51,7 @@ class Xiaomi extends Smartphone {
         if (this.credit >= randomCall * 0.15) {
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= randomCall * 0.15;
+            this.credit -= Math.round(randomCall * 0.15);
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo`);
         }
@@ -68,7 +68,7 @@ class Iphone extends Smartphone {
         if (this.credit + 10>= randomCall * 0.25) {
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= randomCall * 0.25;
+            this.credit -= Math.round(randomCall * 0.25);
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo. Ti ricordiamo che ti offriamo l'opportunità di andare in negativo fino a 10€`);
         }
@@ -181,35 +181,3 @@ function displaySmartphone() {
 
 
 
-// let btn10 = document.querySelector('button:nth-of-type(1)') as HTMLButtonElement
-// btn10.addEventListener('click', function add10() {
-//     user1.smartphone?.setCreditRecharge(10);
-//     let p = document.querySelector('p') as HTMLParagraphElement;
-//     p.innerHTML = `Il tuo credito attuale è di ${user1.smartphone?.credit} euro.`
-// })
-
-// let btn20 = document.querySelector('button:nth-of-type(2)') as HTMLButtonElement
-// btn20.addEventListener('click', function add20() {
-//     user1.smartphone?.setCreditRecharge(20);
-//     let p = document.querySelector('p') as HTMLParagraphElement;
-//     p.innerHTML = `Il tuo credito attuale è di ${user1.smartphone?.credit} euro.`
-// })
-
-// let btn50 = document.querySelector('button:nth-of-type(3)') as HTMLButtonElement
-// btn50.addEventListener('click', function add50() {
-//     user1.smartphone?.setCreditRecharge(50);
-//     let p = document.querySelector('p') as HTMLParagraphElement;
-//     p.innerHTML = `Il tuo credito attuale è di ${user1.smartphone?.credit} euro.`
-// })
-
-// let btnCredit = document.querySelector('button:nth-of-type(4)') as HTMLButtonElement
-// btnCredit.addEventListener('click', function credit() {
-//     let p = document.querySelector('p') as HTMLParagraphElement;
-//     p.innerHTML = `Il tuo credito attuale è di ${user1.smartphone?.credit} euro.`
-// })
-
-// let btnInfoCall1 = document.querySelector('button:nth-of-type(5)') as HTMLButtonElement
-// btnInfoCall1.addEventListener('click', function infoCall() {
-//     let p = document.querySelector('p') as HTMLParagraphElement;
-//     p.innerHTML = `Hai effettuato ${user1.smartphone?.numberCall} chiamate della durata totale di ${user1.smartphone?.totalCallMinutes} minuti`
-// })

@@ -20,10 +20,10 @@ abstract class Smartphone implements Ismartphone {
 
     setCall(): void {
         let randomCall = Math.floor((Math.random() * 10) + 1)
-        if (this.credit >= randomCall * 0.2) {
+        if (this.credit >= Number((randomCall * 0.2).toFixed(2))) {
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= Math.round(randomCall * 0.2);
+            this.credit -= Number((randomCall * 0.2).toFixed(2));
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo`);
         }
@@ -48,10 +48,10 @@ class Xiaomi extends Smartphone {
     credit: number = 50;
     setCall(): void {
         let randomCall = Math.floor((Math.random() * 10) + 1)
-        if (this.credit >= randomCall * 0.15) {
+        if (this.credit >= Number((randomCall * 0.15).toFixed(2))) {          
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= Math.round(randomCall * 0.15);
+            this.credit -= Number((randomCall * 0.15).toFixed(2));
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo`);
         }
@@ -65,10 +65,10 @@ class Samsung extends Smartphone {
 class Iphone extends Smartphone {
     setCall(): void {
         let randomCall = Math.floor((Math.random() * 10) + 1)
-        if (this.credit + 10>= randomCall * 0.25) {
+        if (this.credit + 10>= Number((randomCall * 0.25).toFixed(2))) {
             this.numberCall++;
             this.totalCallMinutes += randomCall;
-            this.credit -= Math.round(randomCall * 0.25);
+            this.credit -= Number((randomCall * 0.25).toFixed(2));
         } else {
             alert(`Il credito per effettuare la chiamata, è insufficiente. Hai solo ${this.credit}€ residuo. Ti ricordiamo che ti offriamo l'opportunità di andare in negativo fino a 10€`);
         }
